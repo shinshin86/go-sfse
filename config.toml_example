@@ -1,0 +1,16 @@
+[Server]
+Host = "{Host}"
+Port = "{Port number}"
+User = "{user}"
+Key  = "{key file path}"
+
+[Command]
+# command name = command(at connected ssh sevrer)
+Hello = "touch Hello_World.txt"
+
+[Sendfile]
+# send file path
+Zip = "{zip file path}"
+
+[Destpath]
+Test = "{dest path}"

@@ -1,5 +1,8 @@
 # go-sfse
-SCP File Send Easy at Go
+SCP File Send Easy at Go.
+
+And this is created to learn Go.
+Sorry I am golang noob and code is low quality.
 
 **Work in progress**
 

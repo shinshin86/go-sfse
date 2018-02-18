@@ -98,7 +98,7 @@ func SCPRun(config *Config, sshconf *ssh.ClientConfig) int {
 
 	fmt.Println("-------->Access to remote server")
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "cannot connecrt ssh: %v", err)
+		fmt.Fprintf(os.Stderr, "cannot connect ssh: %v", err)
 		return 1
 	}
 	defer conn.Close()

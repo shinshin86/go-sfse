@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"io/ioutil"
 	"os"
@@ -156,5 +157,10 @@ func main() {
 	config := LoadConfig()
 	sshconf := SetSSHConfig(config)
 	fmt.Println(SCPRun(config, sshconf))
+
+	fmt.Println("----------> Successful!!")
+	fmt.Println("----------> Please Enter key...")
+	bufio.NewScanner(os.Stdin).Scan()
+
 	os.Exit(CMDRun(config, sshconf))
 }

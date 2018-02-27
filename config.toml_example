@@ -5,12 +5,11 @@ User = "{user}"
 Key  = "{key file path}"
 
 [Command]
-# command name = command(at connected ssh sevrer)
-Hello = "touch Hello_World.txt"
+# command at connected ssh sevrer
+Cmd = "touch Hello_World.txt"
 
 [Sendfile]
-# send file path
-Zip = "{zip file path}"
+Fpath = "{send file path}"
 
 [Destpath]
-Test = "{dest path}"
+Dpath = "{dest path}"

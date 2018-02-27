@@ -27,15 +27,15 @@ type ServerConfig struct {
 }
 
 type Command struct {
-	Hello string
+	Cmd string
 }
 
 type Sendfile struct {
-	Zip string
+	Fpath string
 }
 
 type Destpath struct {
-	Test string
+	Dpath string
 }
 
 func LoadConfig() *Config {
@@ -55,15 +55,15 @@ func LoadConfig() *Config {
 
 	// command
 	fmt.Println("--------------> Exdcution Commmand")
-	fmt.Printf("Command is :%s\n", config.Command.Hello)
+	fmt.Printf("Command is :%s\n", config.Command.Cmd)
 
 	// send file
 	fmt.Println("--------------> Send file")
-	fmt.Printf("Sendfile is :%s\n", config.Sendfile.Zip)
+	fmt.Printf("Sendfile is :%s\n", config.Sendfile.Fpath)
 
 	// dest file
 	fmt.Println("--------------> Dest path")
-	fmt.Printf("Dest Path is :%s\n", config.Destpath.Test)
+	fmt.Printf("Dest Path is :%s\n", config.Destpath.Dpath)
 
 	return &config
 }
@@ -111,8 +111,8 @@ func SCPRun(config *Config, sshconf *ssh.ClientConfig) int {
 	}
 	defer session.Close()
 
-	filepath := config.Sendfile.Zip
-	destpath := config.Destpath.Test
+	filepath := config.Sendfile.Fpath
+	destpath := config.Destpath.Dpath
 
 	cperr := scp.CopyPath(filepath, destpath, session)
 	fmt.Println(cperr)
@@ -143,7 +143,7 @@ func CMDRun(config *Config, sshconf *ssh.ClientConfig) int {
 	defer session.Close()
 
 	// execute command
-	cmderr := session.Run(config.Command.Hello)
+	cmderr := session.Run(config.Command.Cmd)
 	if cmderr != nil {
 		fmt.Fprintf(os.Stderr, "cannot execute command: %v", err)
 		return 1

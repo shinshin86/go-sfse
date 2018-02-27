@@ -21,6 +21,44 @@ This project motivation is want to solve two operation at very easy.
 
 
 
+
+## Binary Build
+
+If you want to make a binary of macOS or Linux or Windows.
+
+```bash
+# build script download
+wget https://gist.githubusercontent.com/shinshin86/3962ff8de51465320cd1aca5f8c05671/raw/69e1c3f4ec9260afe5f4d57754e64c96eeb651e8/go_build01.sh
+
+# build (After change to proper permission)
+./go_build01.sh sfse.go
+
+```
+
+
+
+Binary file export to bin
+
+```bash
+go-sfse - bin
+        ├── darwin386
+        │   └── sfse
+        ├── darwin64
+        │   └── sfse
+        ├── linux386
+        │   └── sfse
+        ├── linux64
+        │   └── sfse
+        ├── windows386
+        │   └── sfse.exe
+        └── windows64
+            └── sfse.exe
+
+```
+
+
+
+
 ## Develop
 
 TODO : 
